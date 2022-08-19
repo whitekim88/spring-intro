@@ -3,9 +3,12 @@ package dev.hellospring.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import dev.hellospring.domain.Member;
 import dev.hellospring.repository.MemberRepository;
 
+@Transactional
 public class MemberService {
 
   private final MemberRepository memberRepository;
@@ -13,7 +16,6 @@ public class MemberService {
   public MemberService(MemberRepository memberRepository) {
     this.memberRepository = memberRepository;
   }
-
 
   /**
    * 회원가입
